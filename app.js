@@ -23,11 +23,9 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-app.listen(3000);
 
 
 // we pass callback in mongoConnect so a function that will get executed once we connect, in this code you get access to the client object
-mongoConnect((client) => {
-    console.log(client)
+mongoConnect.mongoConnect(() => {
     app.listen(3000); // as soon as you connect to the database you are starting the development server 
 }); 
