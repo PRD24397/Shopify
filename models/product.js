@@ -12,7 +12,7 @@ class Product {
 
     save(){
       let db = getDb(); // get access to the database from here
-      db.collection('products').insertOne(this)
+      return db.collection('products').insertOne(this)
       .then(result => {
         console.log('result');
       }).catch(err => {
