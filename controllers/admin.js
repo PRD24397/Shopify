@@ -15,7 +15,7 @@ exports.postAddProduct = (req, res, next) => {
   const description = req.body.description;
   const product = new Product(title, imageUrl, description, price);
   product.save().then(result => {
-    onmouseleave.log(result);
+    console.log(result);
   }).catch(err => {
     console.log(err);
   })

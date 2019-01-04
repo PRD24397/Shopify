@@ -19,7 +19,20 @@ class Product {
         console.log(err);
       }) // specifies in which collection you aim to work. If database is not present this created the database once you start inserting the data
     }
-    
+
+    static fetchAll(){
+      let db = getDb()
+      return db.collection('products').find().toArray()
+      .then(products => {
+        console.log(products);
+        return products;
+      })
+      .catch(err => {
+        console.log(err)
+      });
+
+    }
+  
 
 
 }
