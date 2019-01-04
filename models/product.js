@@ -1,4 +1,4 @@
-
+const mongoDb = require('mongodb');
 const getDb = require('../util/database').getDb; // call this funtion to get access and use the database
 
 class Product {
@@ -31,6 +31,18 @@ class Product {
         console.log(err)
       });
 
+    }
+
+    static findById(prodId){
+      let db = getDb();
+      return db.collection('products').find({_id: new mongoDb.ObjectID(prodId)}).next() // In mongodb the id is set in a form of an object and to compare the id we use this method
+      .then(product => {
+        console.log(product);
+        return product;
+      })
+      .catch(err => {
+        console.log(err); 
+      })
     }
   
 

@@ -10,9 +10,9 @@ const router = express.Router();
 
 router.get('/products', shopController.getProducts);
 
-/* router.get('/products/:productId', shopController.getProduct);
+ router.get('/products/:productId', shopController.getProduct);
 
-router.get('/cart', shopController.getCart);
+/*router.get('/cart', shopController.getCart);
 
 router.post('/cart', shopController.postCart);
 
